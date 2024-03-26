@@ -1,6 +1,4 @@
 const textArea = document.querySelector('cajon-texto')
-let mensaje = document.querySelector('#msg');
-mensaje.value = 'prueba de texto';
 
 // valida el texto para cumplimiento de reglas 
 function validarTexto(texto) {
@@ -22,9 +20,50 @@ function validarTexto(texto) {
 
 function btnEncriptar() {
   let textEscrito = document.querySelector('.cajon-texto').value;
-  validarTexto(textEscrito);
-  if (!validarTexto(textEscrito)) {
-    mensaje.value = textEscrito;
+  let textInput = textEscrito;
+  
+  if (!validarTexto(textInput)) {
+    let Encriptado = encriptar(textInput);
+    let resultado = document.querySelector('#msg');
+    
+    resultado.value = Encriptado;
+    console.log(Encriptado);    
+  }else {
+    textEscrito = "";
   }
   // console.log(textEscrito);
+}
+function btnDesencriptar() {
+  let textoEscrito = document.querySelector('.cajon-texto').value;
+  let Desencriptado = desencriptar(textoEscrito);
+
+  
+  let resultado = document.querySelector('#msg');
+  resultado.value = Desencriptado;
+}
+function btnCopiar() {
+  let Copiado = document.querySelector('#msg').value;
+  navigator.clipboard.writeText(Copiado);
+  document.querySelector('.cajon-texto').value = "";
+}
+
+
+const letras = {"e":"enter","i":"imes","a":"ai","o":"ober","u":"ufat"};
+
+function encriptar(textoEncriptado) {
+  let Encriptado = "";
+  for (const obj in letras) {
+    Encriptado = textoEncriptado.replaceAll(obj, letras[obj]);
+    textoEncriptado = Encriptado;
+  }
+  return (Encriptado);
+}
+
+function desencriptar(textoIngresado) {
+  let Encriptado = "";
+  for (const obj in letras) {
+    Encriptado = textoIngresado.replaceAll(letras[obj], obj);
+    textoIngresado = Encriptado;
+  }
+  return (Encriptado);
 }

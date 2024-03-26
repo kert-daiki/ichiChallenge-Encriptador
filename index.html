@@ -21,7 +21,7 @@
 			<textarea name="text" id="cajon" class="cajon-texto" cols="35" rows="10" placeholder="Ingrese el texto aquí" autofocus></textarea>	
       <div>
         <button onclick=btnEncriptar(); type="button" class="encriptar">Encriptar</button>
-        <button onclick=; type="button" class="desencriptar">Desencriptar</button>
+        <button onclick=btnDesencriptar(); type="button" class="desencriptar">Desencriptar</button>
       </div>
 
 			<div class="cajon-respuesta">
@@ -32,29 +32,19 @@
 					<h3 id="sinmensaje">
 						Ningún mensaje fue encontrado
 					</h3>
-          <input type="text" id="msg" value="No se ha encontrado ningun mensaje"></input>
 				</section>
-        
 
 				<section class="resultado">
-
-
-
-
+          <input type="text" id="msg" value="No se ha encontrado ningun mensaje"></input>
+          <button onclick=btnCopiar(); id="copiar" type="button">Copiar</button>
 				</section>
-				
-
 			</div>
-
-
 		</main>
 
 		<footer>
 			<p>By Nelson Masmela</p>
-
 		</footer>
     <script src="app.js">
-      
     </script>
 
 
