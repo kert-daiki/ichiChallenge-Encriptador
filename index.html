@@ -7,48 +7,57 @@
 	<head> 
 		<meta charset="UTF-8";>
 		<title> Encriptador Alura - Oracle</title>
-		<link rel="stylesheet" href="reset.css">
 		<link rel="stylesheet" href="style.css">
 	</head>
 
 	<body>
+    
 		<header>
 			<h1 class="logo"><img src="img/Logo.png"></h1>
-
 		</header>
 
 		<main class="contenedor">
-			<textarea name="text" id="cajon" class="cajon-texto" cols="35" rows="10" placeholder="Ingrese el texto aquí" autofocus></textarea>	
-      <div>
-        <button onclick=btnEncriptar(); type="button" class="encriptar">Encriptar</button>
-        <button onclick=btnDesencriptar(); type="button" class="desencriptar">Desencriptar</button>
-      </div>
+      
+      <section class="seccionCaja">
+        
+        <div class="text-area"><textarea name="text" id="cajon" class="cajon-texto" cols="5" rows="10" placeholder="Ingrese el texto aquí" autofocus></textarea></div>
 
-			<div class="cajon-respuesta">
-				<section class="vacio">
+        <div class="buttons">
+          <button onclick=btnEncriptar(); type="button" class="encriptar"><span class="textButtonEnc">Encriptar</span></button>
+          <button onclick=btnDesencriptar(); type="button" class="desencriptar"><span class="textButtonDes">Desencriptar</span></button>
+        </div>
+        
+      </section>
+
+			<div class="rectanguloRespuesta">
+        
+				<section class="estadoInicial">
+          
 					<h2>
 						<img class="muñeco" src="img/Muñeco.png">
 					</h2>
+          
 					<h3 id="sinmensaje">
 						Ningún mensaje fue encontrado
 					</h3>
+          
+          <p class="aviso">Ingresa el texto que desea desencriptar</p>
+          
 				</section>
 
 				<section class="resultado">
-          <input type="text" id="msg" value="No se ha encontrado ningun mensaje"></input>
-          <button onclick=btnCopiar(); id="copiar" type="button">Copiar</button>
+          <p id="msg">iiii<p>
+          <button onclick=btnCopiar(); class="btnCopiar" id="copiar" type="button">Copiar</button>
 				</section>
+        
 			</div>
+      
 		</main>
 
 		<footer>
-			<p>By Nelson Masmela & Dylan</p>
+			<p>By Nelson Masmela & Dylan Masmela</p>
 		</footer>
-    <script src="app.js">
-    </script>
-
-
-
+    <script src="app.js"></script>
 	</body>
 
 </html>

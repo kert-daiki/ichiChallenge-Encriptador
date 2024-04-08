@@ -5,6 +5,7 @@ function validarTexto(texto) {
   let caracteres = /!@#$%^&*()_+/g;
   let mayus = /[A-Z]/g;
   let vacio = "";
+  
 
   if (texto.match(mayus) || texto.match(caracteres)){
     alert('No se pueden usar caracteres especiales ni mayusculas')
@@ -25,7 +26,12 @@ function btnEncriptar() {
   if (!validarTexto(textInput)) {
     let Encriptado = encriptar(textInput);
     let resultado = document.querySelector('#msg');
+
+    let retirarElementos = document.querySelector('.estadoInicial');
+    let organizarRespuesta = document.querySelector('.resultado')
     
+    retirarElementos.style.display='none';
+    organizarRespuesta.style.justifycontent='center';
     resultado.value = Encriptado;
     console.log(Encriptado);    
   }else {
