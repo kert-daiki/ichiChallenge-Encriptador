@@ -30,7 +30,9 @@ function btnEncriptar() {
     let retirarElementos = document.querySelector('.estadoInicial');
     let organizarRespuesta = document.querySelector('.resultado')
     
-    retirarElementos.style.display='flex';
+    retirarElementos.style.display='none';
+    organizarRespuesta.style.display='flex';
+    organizarRespuesta.style.flexdrection='column';
     organizarRespuesta.style.justifycontent='center';
     resultado.value = Encriptado;
     console.log(Encriptado);    
