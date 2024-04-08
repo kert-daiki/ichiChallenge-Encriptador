@@ -2,7 +2,7 @@ const textArea = document.querySelector('cajon-texto')
 
 // valida el texto para cumplimiento de reglas 
 function validarTexto(texto) {
-  let caracteres = /!@#$%^&*()_+/g;
+  let caracteres = /[!@#$%^&*()_+]/g;
   let mayus = /[A-Z]/g;
   let vacio = "";
   
@@ -32,9 +32,9 @@ function btnEncriptar() {
     
     retirarElementos.style.display='none';
     organizarRespuesta.style.display='flex';
-    organizarRespuesta.style.flexdrection='column';
-    organizarRespuesta.style.justifycontent='center';
-    resultado.value = Encriptado;
+//    organizarRespuesta.style.flexdrection='column';
+//    organizarRespuesta.style.justifycontent='center';
+    resultado.innerHTML = Encriptado;
     console.log(Encriptado);    
   }else {
     textEscrito = "";
@@ -47,12 +47,21 @@ function btnDesencriptar() {
 
   
   let resultado = document.querySelector('#msg');
-  resultado.value = Desencriptado;
+  resultado.innerHTML = Desencriptado;
 }
 function btnCopiar() {
-  let Copiado = document.querySelector('#msg').value;
+  let Copiado = document.querySelector('#msg').innerHTML;
   navigator.clipboard.writeText(Copiado);
   document.querySelector('.cajon-texto').value = "";
+  valoresIniciales();
+}
+
+function valoresIniciales() {
+	let retirarElementos = document.querySelector('.estadoInicial');
+    let organizarRespuesta = document.querySelector('.resultado')
+    
+    retirarElementos.style.display='block';
+    organizarRespuesta.style.display='none';
 }
 
 
