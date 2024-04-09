@@ -27,11 +27,7 @@ function btnEncriptar() {
     let Encriptado = encriptar(textInput);
     let resultado = document.querySelector('#msg');
 
-    let retirarElementos = document.querySelector('.estadoInicial');
-    let organizarRespuesta = document.querySelector('.resultado')
-    
-    retirarElementos.style.display='none';
-    organizarRespuesta.style.display='flex';
+    muestraMensaje();
 //    organizarRespuesta.style.flexdrection='column';
 //    organizarRespuesta.style.justifycontent='center';
     resultado.innerHTML = Encriptado;
@@ -45,6 +41,7 @@ function btnDesencriptar() {
   let textoEscrito = document.querySelector('.cajon-texto').value;
   let Desencriptado = desencriptar(textoEscrito);
 
+  muestraMensaje();
   
   let resultado = document.querySelector('#msg');
   resultado.innerHTML = Desencriptado;
@@ -62,6 +59,16 @@ function valoresIniciales() {
     
     retirarElementos.style.display='block';
     organizarRespuesta.style.display='none';
+}
+
+function muestraMensaje() {
+  
+    let retirarElementos = document.querySelector('.estadoInicial');
+    let organizarRespuesta = document.querySelector('.resultado')
+    
+    retirarElementos.style.display='none';
+    organizarRespuesta.style.display='flex';
+
 }
 
 
