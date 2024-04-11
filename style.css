@@ -2,42 +2,66 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /*! flex: 2 auto; */
+}
+
+img {
+  max-width: 100%;
+  display: block;
 }
 
 body{
-	width: 100%;
+	/*! width: 100%; */
   background: #F3F5FC;
   font-family: 'Inter-Regular', Helvetica;
+  display: flex;
+  flex-flow: column;
+	height: 100vh;
 }
 
 header{
 	background: #F3F5FC;
+  flex: 1 17px;
+	align-self: flex-start;
+	display: flex;
+	align-items: center;
 }
 .logo{
-	/* padding: 40px 40px; */
+	padding: 20px 20px;
 	/* vertical-align: baseline; */
-	padding-top: 25px;
+	/*! padding-top: 25px; */
     vertical-align: baseline;
 }
 
 .contenedor{
-	width: 90vw;
-	margin: auto;
+  flex: 3 auto;
+	/*! width: 90vw; */
+	margin: 1%;
   display: flex;
   flex-direction: row;
   /* height: 520px; */
+  align-items: stretch;
+  align-self: stretch;
 }
 
 .seccionCaja {
   /* display: flex; */
   margin: 0 15px 0 0;
   /* flex-direction: column; */
+  flex: 3 100px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .text-area {
-  margin: 1% auto;
+  margin: 1%;
   /* height: 90%; */
   padding-right: 30px;
+  flex: 2 auto;
+  align-self: stretch;
+  display: flex;
 }
 
 /* para no mostrar el borde del textarea*/
@@ -51,15 +75,17 @@ textarea:focus{
 
 .cajon-texto {
 	/* height: 240px; */
-	display: flex;
-	margin: 2% auto;
+	margin: 2%;
   margin-left: 0;
   margin-bottom: 0;
-	width: 60vw;
+	/*! width: 60vw; */
 	background: #F3F5FC;
 	font-size: 32px;
 	border: none;
 	resize: none;
+	align-self: stretch;
+	/*! flex-flow: row wrap; */
+	flex: 1 auto;
 }
 
 .buttons {
@@ -102,7 +128,8 @@ textarea:focus{
 
 .textButtonEnc {
   text-align: center;
-  font-size: 16px;
+  
+  : 16px;
   font-family: "Inter-Regular", Helvetica;
   font-weight: 400;
   color: white;
@@ -131,14 +158,15 @@ textarea:focus{
 	box-sizing: border-box;
 	border-radius: 32px;
 	text-align: center;
-  width: 100%;
-	/* height: 90%; */
+  /*! width: 100%; */
+	/*! height: 90%; */
   align-items: center;
-  justify-content:space-evenly;
+  justify-content:space-around;
   display: flex;
   flex-direction: column;
 	padding: 30px 20px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	flex: 1 100px;
 }
 	
 .estadoInicial {
@@ -158,6 +186,10 @@ textarea:focus{
   line-height: 28.8px;
   letter-spacing: 0;
   /* font-weight: 700; */
+  display: flex;
+  /*! justify-content: center; */
+  align-items: center;
+  flex-flow: column;
 }
 
 .muñeco {
@@ -167,28 +199,38 @@ textarea:focus{
 .resultado {
   display: none;
   flex-direction: column;
-  justify-content:center;
-  height:326px;
-  margin:10%;
+  justify-content:space-around;
+  /*! height:326px; */
+  margin:1%;
+  align-self: stretch;
+  flex: 1 auto;
 }
 
 .alineaTexto {
 	text-align:center;
+	flex: 4 auto;
+	display: flex;
+	margin-top: 40px;
 }
 p#msg {
 	font-size:20px;
-	height:240px;
-	text-align:left;
+	/*! height:240px; */
+	text-align:center;
+	flex: 1 auto;
+	/*! align-self: stretch; */
+	/*! font-size: 1.5rem; */
+	/*! display: flex; */
+	flex: 1 auto;
 }
 
 
 /* bonton copiar */
 .btnCopiar {
   all: unset;
-  box-sizing: border-box;
-  /* width: 328px; */
+  /*! box-sizing: border-box; */
+  /*! width: 328px; */
   gap: 8px;
-  padding: 24px;
+  padding: 21px;
   align-items: center;
   align-self:center;
   display: flex;
@@ -196,15 +238,15 @@ p#msg {
   border-radius: 24px;
   /* estilo para el texto dentro del boton */
   text-align: center;
-  font-size: 16px;
+  /*! font-size: 16px; */
   font-family: "Inter-Regular", Helvetica;
   font-weight: 400;
   color: white;
   letter-spacing: 0;
   line-height: normal;
-  flex: 1;
+  flex: 0.2 auto;
   position: relative;
-  margin-top:18px;
+  /*! marign:52px; */
 } 
 
 
@@ -222,7 +264,8 @@ p#msg {
 /* } */
 
 
-footer{
+footer {
+  /*! flex: 1 1; */
 	text-align: center;
 	margin:1%;
 	padding: 10px;
